@@ -4,6 +4,8 @@ var url = require("url");
 var votos = 0,
     soma = 0;
 
+var port = process.env.PORT || 3000;
+
 var server = http.createServer(function(req, res) {
   var response = (votos < 1) ? (0) : (Math.round(soma / votos));
   console.log("média = " + response);
@@ -23,6 +25,6 @@ var server = http.createServer(function(req, res) {
   res.end(String(response));
 });
 
-server.listen(3000, function() {
+server.listen(port, function() {
   console.log("ouvindo");
 });
