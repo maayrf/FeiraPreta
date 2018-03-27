@@ -1,3 +1,5 @@
+// cd Documentos/arduino/libraries
+// git clone https://github.com/paolobueno/arduino-restclient.git
 #include <RestClient.h>
 #include <UIPEthernet.h>
 const int qtdeLEDs = 5;
@@ -8,6 +10,8 @@ int intervalo_atualizacao = 1000;
 byte mac[] = {0xDE, 0xED, 0xBA, 0xFE, 0xF1, 0x77};
 
 EthernetClient client;
+// TODO: substituir pelo dominio do backend
+// ex: restClient("xxx.heroku.com", 80, client);
 RestClient restClient("192.168.2.36", 3000, client);
 
 void setup() {
@@ -23,6 +27,8 @@ void setup() {
 
 void loop() {
   char resposta[16] = {};
+  // TODO: substituir por caminho do endpoint de média das notas
+  // ex: int statusCode = restClient.get("/media", resposta, 16); 
   int statusCode = restClient.get("/", resposta, 16);
   if (statusCode == 200) {
     Serial.println(F("Recebi resposta"));
