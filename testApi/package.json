@@ -1,0 +1,14 @@
+{
+  "name": "feira-preta-server",
+  "version": "0.0.1",
+  "description": "simple api test server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrf98/FeiraPreta.git"
+  },
+  "license": "ISC"
+}
